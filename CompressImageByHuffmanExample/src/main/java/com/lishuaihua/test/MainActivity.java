@@ -19,6 +19,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.lishuaihua.compress.CompressListener;
 import com.lishuaihua.compress.ImageCompress;
 
 import java.io.File;
@@ -32,7 +33,8 @@ import java.util.ArrayList;
 
 import me.iwf.photopicker.PhotoPicker;
 
-import static com.lishuaihua.test.CompressPictureUtil.compressImageByHuffman;
+import static com.lishuaihua.compress.CompressPictureUtil.compressImageByHuffman;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -58,7 +60,20 @@ public class MainActivity extends AppCompatActivity {
                 .setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(final View v) {
-                        compressImageByHuffman(path,q,50,desPath);
+                        compressImageByHuffman(path, q, 50, desPath, new CompressListener() {
+                            @Override
+                            public void startCompress() {
+
+
+                            }
+
+                            @Override
+                            public void completedCompress() {
+                                File file1 = new File(desPath);
+                                Glide.with(MainActivity.this).load(file1).into(iv2);
+                                String fileSize = Formatter.formatFileSize(MainActivity.this, getFileSize(file1));
+                            }
+                        });
 
                     }
                 });

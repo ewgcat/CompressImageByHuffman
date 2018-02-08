@@ -3,9 +3,15 @@ package com.lishuaihua.compress;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
+import android.os.Environment;
 import android.util.Log;
 
+import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 
 /**
  * Created by lishuaihua on 2018/2/8.
@@ -13,6 +19,9 @@ import java.io.File;
 
 public class CompressPictureUtil {
     private static final String TAG = "CompressPictureUtil";
+    private static final String tempDir = Environment.getExternalStorageDirectory() + "/temp";
+    private static final String tempName = "temp.jpg";
+    private static final String tempPath = tempDir + File.separator + tempName;
 
 
     /**
@@ -31,17 +40,47 @@ public class CompressPictureUtil {
 
             @Override
             protected void onPostExecute(Void aVoid) {
-                int size = (int) new File(desPath).length() / 1024;
+                long size = getFileSize(new File(desPath)) / 1024;
                 Log.i(TAG, "图片压缩后大小：" + size + "KB");
-                while (quality[0] > 1 && size > totalSize) {
-                    quality[0] = quality[0] / 2;
-                    Log.i(TAG, "quality=" + quality[0]);
-                    compressImageByHuffman(path, quality, totalSize, desPath, listener);
+                if (size > totalSize) {
+                    if (quality[0] > 1) {
+                        quality[0] = quality[0] / 2;
+                        Log.i(TAG, "quality=" + quality[0]);
+                        compressImageByHuffman(path, quality, totalSize, desPath, listener);
+                    }
                 }
                 listener.completedCompress();
             }
         }.execute();
 
     }
+
+
+
+    /**
+     * 获取指定文件大小
+     *
+     * @param file
+     * @return
+     * @throws Exception
+     */
+    public static long getFileSize(File file) {
+        long size = 0;
+        if (file.exists()) {
+            FileInputStream fis = null;
+            try {
+                fis = new FileInputStream(file);
+                size = fis.available();
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        } else {
+            Log.e("获取文件大小", "文件不存在!");
+        }
+        return size;
+    }
+
+
 
 }

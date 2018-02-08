@@ -20,6 +20,7 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.lishuaihua.compress.CompressListener;
+import com.lishuaihua.compress.CompressPictureUtil;
 import com.lishuaihua.compress.ImageCompress;
 
 import java.io.File;
@@ -94,6 +95,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     int[] q = {10};
+    int[] o= {100};
 
 
 

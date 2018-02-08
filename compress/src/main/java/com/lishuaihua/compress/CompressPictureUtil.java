@@ -74,6 +74,14 @@ public class CompressPictureUtil {
 
             } catch (IOException e) {
                 e.printStackTrace();
+            }finally {
+                if (fis!=null){
+                    try {
+                        fis.close();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
             }
         } else {
             Log.e("获取文件大小", "文件不存在!");

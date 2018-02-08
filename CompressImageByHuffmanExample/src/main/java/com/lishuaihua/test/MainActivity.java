@@ -63,8 +63,7 @@ public class MainActivity extends AppCompatActivity {
                         compressImageByHuffman(path, q, 50, desPath, new CompressListener() {
                             @Override
                             public void startCompress() {
-
-
+                                
                             }
 
                             @Override

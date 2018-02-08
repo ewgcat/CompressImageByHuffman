@@ -1,0 +1,80 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 27
+    buildToolsVersion "27.0.3"
+    defaultConfig {
+//        applicationId "com.yijian.compress"
+        minSdkVersion 19
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        externalNativeBuild {
+            cmake {
+//                cppFlags "-frtti -fexceptions"
+//                arguments "-DANDROID_TOOLCHAIN=clang"
+                abiFilters 'armeabi'
+            }
+        }
+
+        ndk {
+            //打包进APK的ABI类型
+            abiFilters 'armeabi'
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    externalNativeBuild {
+        cmake {
+            path "CMakeLists.txt"
+        }
+    }
+
+    sourceSets {
+        main {
+            java.srcDirs 'src/java'
+            jniLibs.srcDirs  'libs'
+//            jniLibs.srcDirs '../libjpeg/prebuilt', 'libs'
+
+            // 这里没有添加libjpeg.so这个动态库，也是可以执行的。
+            // 原因在于android本身使用了 libjpeg.so这个动态库，
+            // 这个库存放在/system/lib下，如果我们没有加入
+            // libjpeg.so的话，他会去/system/lib下加载这个动态库
+
+            // 如果android手机上没有 libjpeg.so这个动态库的话，
+            // 也可以使用: jniLibs.srcDirs '../libjpeg/prebuilt' 'lib'
+            // 将libjpeg.so加入到apk中
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:27.0.2'
+
+    testCompile 'junit:junit:4.12'
+}
+//==============以下是要添加的内容======================
+////task to delete the old jar 这个表示将会删除这个目录下的*.jar名称的旧版本
+task deleteOldJar(type: Delete) {
+    delete 'release/classes.jar'
+    }
+
+//task to export contents as jar 将from(*)该目录下的文件复制到release/下 并更改名称为Bsdiff.jar
+task exportJar(type: Copy) {
+from('build/intermediates/bundles/release/')
+    into('release/')
+   include('classes.jar')
+   ///Rename the jar
+   rename('classes.jar', 'compress.jar')
+   }
+
+exportJar.dependsOn(deleteOldJar, build)

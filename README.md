@@ -1,15 +1,17 @@
-####使用libjpeg进行图片压缩（哈夫曼算法,无损压缩）
+<a href="https://996.icu"><img src="https://img.shields.io/badge/link-996.icu-red.svg" alt="996.icu" /></a>
 
-###使用方法：
+#### 使用libjpeg进行图片压缩（哈夫曼算法,无损压缩）
+
+### 使用方法：
 
 方法一、依赖compress
 
 方法二、拷贝example 的lib包下文件到你的项目,具体使用参考例子
 
-##推荐方法
+## 推荐方法
 下载compress,根据具体需求，重新打包
 
-###注意
+### 注意
 
 1、只支持armeabi；
 

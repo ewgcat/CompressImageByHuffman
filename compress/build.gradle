@@ -12,7 +12,7 @@ android {
             cmake {
 //                cppFlags "-frtti -fexceptions"
 //                arguments "-DANDROID_TOOLCHAIN=clang"
-                abiFilters 'armeabi-v7a','arm64-v8a'
+                abiFilters  "armeabi-v7a",'arm64-v8a'
             }
         }
         ndk {
@@ -27,11 +27,6 @@ android {
         }
     }
 
-    externalNativeBuild {
-        cmake {
-            path "CMakeLists.txt"
-        }
-    }
 
     sourceSets {
         main {
@@ -47,6 +42,12 @@ android {
             // 如果android手机上没有 libjpeg.so这个动态库的话，
             // 也可以使用: jniLibs.srcDirs '../libjpeg/prebuilt' 'lib'
             // 将libjpeg.so加入到apk中
+        }
+    }
+    externalNativeBuild {
+
+        cmake {
+            path "CMakeLists.txt"
         }
     }
 }

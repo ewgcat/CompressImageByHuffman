@@ -5,7 +5,6 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/CompressImageByHuffman.iml" filepath="$PROJECT_DIR$/.idea/modules/CompressImageByHuffman.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/CompressImageByHuffman.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/CompressImageByHuffman.app.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/compress/CompressImageByHuffman.compress.iml" filepath="$PROJECT_DIR$/.idea/modules/compress/CompressImageByHuffman.compress.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/imageselector/CompressImageByHuffman.imageselector.iml" filepath="$PROJECT_DIR$/.idea/modules/imageselector/CompressImageByHuffman.imageselector.iml" />
     </modules>
   </component>
 </project>

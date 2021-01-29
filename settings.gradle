@@ -1,1 +1,1 @@
-include ':compress',   ':imageselector', ':app'
+include ':compress',    ':app'

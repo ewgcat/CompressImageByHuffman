@@ -4,22 +4,27 @@
 ### Step 1. Add the JitPack repository to your build file
 
 #### Add it in your root build.gradle at the end of repositories:
+```
 
-    ```
     allprojects {
     		repositories {
     			...
     			maven { url 'https://jitpack.io' }
     		}
     	}
-    ```
+	
+```
 
 ### Step 2. Add the dependency
+
 ```
+
 	dependencies {
 	        implementation 'com.github.ewgcat:CompressImageByHuffman:1.0.6'
 	}
+	
 ```
+
 
 ```
 
@@ -39,6 +44,7 @@ class BaseViewModel : ViewModel() {
 }
 
 ```
+
 ```
 
     private fun compressImage() {
@@ -58,6 +64,7 @@ class BaseViewModel : ViewModel() {
                 }
             })
     }
+    
 ```
 ### 注意
 

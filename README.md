@@ -70,7 +70,7 @@ class BaseViewModel : ViewModel() {
 
 1、支持armeabi,armeabi-v7a,arm64-v8a
 
-2、压缩过程是耗时操作，必须在子线程中调用
+2、压缩过程是耗时操作，使用kotlin协程切换线程
 
 3、图片压缩有最大极限，如果要指定压缩到多少KB，请结合其他压缩方式使用。
 

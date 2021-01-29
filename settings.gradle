@@ -1,1 +1,1 @@
-include ':compress', ':CompressImageByHuffmanExample'
+include ':compress',   ':imageselector', ':app'

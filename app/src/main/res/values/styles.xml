@@ -1,0 +1,26 @@
+<resources>
+
+    <!-- Base application theme. -->
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="LoadingDialog" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowIsFloating">true</item><!-- 是否浮现在activity之上 -->
+        <item name="android:windowFrame">@null</item><!-- 边框 -->
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item> <!-- 无标题栏 -->
+        <item name="android:windowIsTranslucent">false</item><!-- 是否半透明,背景图或背景色的透明度优先于此 -->
+        <item name="android:windowBackground">@android:color/transparent</item><!-- 背景透明 -->
+        <item name="android:background">@android:color/transparent</item><!-- 背景透明 -->
+        <item name="android:backgroundDimEnabled">false</item><!--是否开启dlg显示时后面的灰暗背景，false表示不开启 -->
+        <item name="android:backgroundDimAmount">0.0</item> <!-- dlg显示时灰暗背景的灰暗值,0.0是无灰暗背景，它的优先级低于backgroundDimEnabled -->
+    </style>
+
+</resources>

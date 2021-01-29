@@ -1,6 +1,5 @@
-<a href="https://996.icu"><img src="https://img.shields.io/badge/link-996.icu-red.svg" alt="996.icu" /></a>
+# 使用libjpeg进行图片压缩(哈夫曼编码)（kotlin协程）
 
-#### 使用libjpeg进行图片压缩（哈夫曼算法,无损压缩）
 
 ### 使用方法：
 
@@ -13,7 +12,7 @@
 
 ### 注意
 
-1、只支持armeabi；
+1、只支持armeabi,armeabi-v7a,arm64-v8a
 
 2、压缩过程是耗时操作，必须在子线程中调用
 

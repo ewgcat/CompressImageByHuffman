@@ -40,7 +40,7 @@ class MainActivity : BaseActivity<BaseViewModel>() {
                         quality =  intArrayOf(100),
                         totalSize = 100,
                         desPath = desPath,
-                        object : CompressListener {
+                        listener = object : CompressListener {
                             override fun startCompress() {
                                 Log.d(TAG, "startCompress")
                                 showLoading("Compressing")

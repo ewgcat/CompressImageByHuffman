@@ -1,3 +1,0 @@
-/Users/lishuaihua/Desktop/CompressImageByHuffman/compress/.cxx/cmake/release/armeabi-v7a/CMakeFiles/rebuild_cache.dir
-/Users/lishuaihua/Desktop/CompressImageByHuffman/compress/.cxx/cmake/release/armeabi-v7a/CMakeFiles/edit_cache.dir
-/Users/lishuaihua/Desktop/CompressImageByHuffman/compress/.cxx/cmake/release/armeabi-v7a/CMakeFiles/compress.dir

@@ -3,6 +3,8 @@ apply plugin: 'kotlin-android'
 
 android {
     compileSdkVersion rootProject.compileSdkVersion
+    buildToolsVersion rootProject.buildToolsVersion
+
     defaultConfig {
         applicationId "com.lishuaihua.test"
         minSdkVersion rootProject.minSdkVersion

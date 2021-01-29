@@ -1,8 +1,0 @@
-ninja: Entering directory `/Users/lishuaihua/Desktop/CompressImageByHuffman/compress/.cxx/cmake/release/armeabi-v7a'
-[1/2] Building C object CMakeFiles/compress.dir/src/main/cpp/compress.c.o
-../../../../src/main/cpp/compress.c:161:9: warning: implicitly declaring library function 'memcpy' with type 'void *(void *, const void *, unsigned int)' [-Wimplicit-function-declaration]
-        memcpy(ret, tempStr, len);
-        ^
-../../../../src/main/cpp/compress.c:161:9: note: include the header <string.h> or explicitly provide a declaration for 'memcpy'
-1 warning generated.
-[2/2] Linking C shared library ../../../../build/intermediates/cmake/release/obj/armeabi-v7a/libcompress.so

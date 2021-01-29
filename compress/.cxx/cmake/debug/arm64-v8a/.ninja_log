@@ -1,6 +1,0 @@
-# ninja log v5
-1	354	1611935423	CMakeFiles/compress.dir/src/main/cpp/compress.c.o	5e63af75dad5e72c
-355	512	1611935423	../../../../build/intermediates/cmake/debug/obj/arm64-v8a/libcompress.so	5124e758c13d5745
-0	7	0	clean	7ff32dd4cb7a676
-1	291	1611936218	CMakeFiles/compress.dir/src/main/cpp/compress.c.o	5e63af75dad5e72c
-291	354	1611936218	../../../../build/intermediates/cmake/debug/obj/arm64-v8a/libcompress.so	5124e758c13d5745

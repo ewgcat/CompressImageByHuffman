@@ -34,32 +34,8 @@ class MainActivity : BaseActivity<BaseViewModel>() {
         checkPermission()
 
         findViewById<View>(R.id.btn_compress)
-            .setOnClickListener {
-                  vm.compressImage(
-                        path = path,
-                        quality =  intArrayOf(100),
-                        totalSize = 100,
-                        desPath = desPath,
-                        listener = object : CompressListener {
-                            override fun startCompress() {
-                                Log.d(TAG, "startCompress")
-                                showLoading("Compressing")
-                            }
-                            override fun completedCompress() {
-                                Log.d(TAG, "completedCompress")
-                                hideLoading()
-                                val file1 = File(desPath)
-                                Log.i(
-                                    TAG,
-                                    "压缩后：" + Formatter.formatFileSize(
-                                        this@MainActivity,
-                                        getFileSize(file1)
-                                    )
-                                )
-                                Glide.with(this@MainActivity).load(file1).into(iv2)
-                            }
-                        })
-                }
+            .setOnClickListener { compressImage()
+            }
 
         findViewById<View>(R.id.btn_select_ptoto)
             .setOnClickListener {
@@ -71,6 +47,23 @@ class MainActivity : BaseActivity<BaseViewModel>() {
             }
     }
 
+    private fun compressImage() {
+        vm.compressImage(
+            path = path,
+            quality = intArrayOf(100),
+            totalSize = 100,
+            desPath = desPath,
+            listener = object : CompressListener {
+                override fun startCompress() {
+                    showLoading("Compressing")
+                }
+
+                override fun completedCompress() {
+                    hideLoading()
+                    Glide.with(this@MainActivity).load(File(desPath)).into(iv2)
+                }
+            })
+    }
 
 
     /**

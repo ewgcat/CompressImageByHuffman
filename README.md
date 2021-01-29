@@ -1,18 +1,67 @@
 # 使用libjpeg进行图片压缩(哈夫曼编码)（kotlin协程）
 
 
-### 使用方法：
+### Step 1. Add the JitPack repository to your build file
 
-方法一、依赖compress
+#### Add it in your root build.gradle at the end of repositories:
 
-方法二、拷贝example 的lib包下文件到你的项目,具体使用参考例子
+    ```
+    allprojects {
+    		repositories {
+    			...
+    			maven { url 'https://jitpack.io' }
+    		}
+    	}
+    ```
 
-## 推荐方法
-下载compress,根据具体需求，重新打包
+### Step 2. Add the dependency
+```
+	dependencies {
+	        implementation 'com.github.ewgcat:CompressImageByHuffman:1.0.6'
+	}
+```
 
+```
+
+class BaseViewModel : ViewModel() {
+    /**
+     * 没法在主线程完成的繁重操作
+     */
+    fun compressImage( path: String?,
+                        quality: IntArray,
+                        totalSize: Int,
+                        desPath: String?,
+                        listener: CompressListener?) {
+        viewModelScope.launch {
+            CompressPictureUtil.compressImageByHuffman(path, quality, totalSize, desPath, listener)
+        }
+    }
+}
+
+```
+```
+
+    private fun compressImage() {
+        vm.compressImage(
+            path = path,
+            quality = intArrayOf(100),
+            totalSize = 100,
+            desPath = desPath,
+            listener = object : CompressListener {
+                override fun startCompress() {
+                    showLoading("Compressing")
+                }
+
+                override fun completedCompress() {
+                    hideLoading()
+                    Glide.with(this@MainActivity).load(File(desPath)).into(iv2)
+                }
+            })
+    }
+```
 ### 注意
 
-1、只支持armeabi,armeabi-v7a,arm64-v8a
+1、支持armeabi,armeabi-v7a,arm64-v8a
 
 2、压缩过程是耗时操作，必须在子线程中调用
 

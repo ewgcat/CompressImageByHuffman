@@ -1,9 +1,7 @@
-package com.lishuaihua.test
+package com.lishuaihua.compress
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.lishuaihua.compress.CompressListener
-import com.lishuaihua.compress.CompressPictureUtil
 import kotlinx.coroutines.launch
 
 class BaseViewModel : ViewModel() {

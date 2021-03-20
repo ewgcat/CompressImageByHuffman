@@ -8,6 +8,7 @@ import android.util.Log
 import android.view.View
 import android.widget.ImageView
 import com.bumptech.glide.Glide
+import com.lishuaihua.compress.BaseViewModel
 import com.lishuaihua.compress.CompressListener
 import com.lishuaihua.imageselector.utils.ImageSelector
 import com.lishuaihua.permissions.JackPermissions
@@ -60,6 +61,10 @@ class MainActivity : BaseActivity<BaseViewModel>() {
 
                 override fun completedCompress() {
                     hideLoading()
+                    Log.i(
+                        TAG,
+                        "压缩后图片大小：" + Formatter.formatFileSize(this@MainActivity, getFileSize(File(desPath)))
+                    )
                     Glide.with(this@MainActivity).load(File(desPath)).into(iv2)
                 }
             })

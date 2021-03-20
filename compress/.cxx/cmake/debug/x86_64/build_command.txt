@@ -1,0 +1,21 @@
+                Executable : /Users/lishuaihua/Library/Android/sdk/cmake/3.10.2.4988404/bin/cmake
+arguments : 
+-H/Users/lishuaihua/Desktop/CompressImageByHuffman/compress
+-DCMAKE_FIND_ROOT_PATH=/Users/lishuaihua/Desktop/CompressImageByHuffman/compress/.cxx/cmake/debug/prefab/x86_64/prefab
+-DCMAKE_BUILD_TYPE=Debug
+-DCMAKE_TOOLCHAIN_FILE=/Users/lishuaihua/Library/Android/sdk/ndk/21.1.6352462/build/cmake/android.toolchain.cmake
+-DANDROID_ABI=x86_64
+-DANDROID_NDK=/Users/lishuaihua/Library/Android/sdk/ndk/21.1.6352462
+-DANDROID_PLATFORM=android-21
+-DCMAKE_ANDROID_ARCH_ABI=x86_64
+-DCMAKE_ANDROID_NDK=/Users/lishuaihua/Library/Android/sdk/ndk/21.1.6352462
+-DCMAKE_EXPORT_COMPILE_COMMANDS=ON
+-DCMAKE_LIBRARY_OUTPUT_DIRECTORY=/Users/lishuaihua/Desktop/CompressImageByHuffman/compress/build/intermediates/cmake/debug/obj/x86_64
+-DCMAKE_MAKE_PROGRAM=/Users/lishuaihua/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja
+-DCMAKE_SYSTEM_NAME=Android
+-DCMAKE_SYSTEM_VERSION=21
+-B/Users/lishuaihua/Desktop/CompressImageByHuffman/compress/.cxx/cmake/debug/x86_64
+-GNinja
+jvmArgs : 
+
+Build command args:

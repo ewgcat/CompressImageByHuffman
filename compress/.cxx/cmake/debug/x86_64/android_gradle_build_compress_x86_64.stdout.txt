@@ -1,0 +1,16 @@
+ninja: Entering directory `/Users/lishuaihua/Desktop/CompressImageByHuffman/compress/.cxx/cmake/debug/x86_64'
+[1/1] Linking C shared library ../../../../build/intermediates/cmake/debug/obj/x86_64/libcompress.so
+FAILED: ../../../../build/intermediates/cmake/debug/obj/x86_64/libcompress.so 
+: && /Users/lishuaihua/Library/Android/sdk/ndk/21.1.6352462/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang --target=x86_64-none-linux-android21 --gcc-toolchain=/Users/lishuaihua/Library/Android/sdk/ndk/21.1.6352462/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/lishuaihua/Library/Android/sdk/ndk/21.1.6352462/toolchains/llvm/prebuilt/darwin-x86_64/sysroot -fPIC -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -Wl,--exclude-libs,libgcc.a -Wl,--exclude-libs,libgcc_real.a -Wl,--exclude-libs,libatomic.a -static-libstdc++ -Wl,--build-id -Wl,--fatal-warnings -Wl,--no-undefined -Qunused-arguments -shared -Wl,-soname,libcompress.so -o ../../../../build/intermediates/cmake/debug/obj/x86_64/libcompress.so CMakeFiles/compress.dir/src/main/cpp/compress.c.o  ../../../../libjpeg/prebuilt/x86_64/libjpeg.so -llog -ljnigraphics -latomic -lm && :
+/Users/lishuaihua/Library/Android/sdk/ndk/21.1.6352462/toolchains/llvm/prebuilt/darwin-x86_64/lib/gcc/x86_64-linux-android/4.9.x/../../../../x86_64-linux-android/bin/ld: error: ../../../../libjpeg/prebuilt/x86_64/libjpeg.so: incompatible target
+../../../../src/main/cpp/compress.c:104: error: undefined reference to 'jpeg_std_error'
+../../../../src/main/cpp/compress.c:111: error: undefined reference to 'jpeg_CreateCompress'
+../../../../src/main/cpp/compress.c:119: error: undefined reference to 'jpeg_stdio_dest'
+../../../../src/main/cpp/compress.c:127: error: undefined reference to 'jpeg_set_defaults'
+../../../../src/main/cpp/compress.c:131: error: undefined reference to 'jpeg_set_quality'
+../../../../src/main/cpp/compress.c:133: error: undefined reference to 'jpeg_start_compress'
+../../../../src/main/cpp/compress.c:139: error: undefined reference to 'jpeg_write_scanlines'
+../../../../src/main/cpp/compress.c:148: error: undefined reference to 'jpeg_finish_compress'
+../../../../src/main/cpp/compress.c:150: error: undefined reference to 'jpeg_destroy_compress'
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+ninja: build stopped: subcommand failed.

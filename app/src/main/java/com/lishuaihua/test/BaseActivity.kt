@@ -19,6 +19,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDialog
 import androidx.lifecycle.ViewModelProvider
+import com.lishuaihua.compress.BaseViewModel
 import java.lang.reflect.ParameterizedType
 
 

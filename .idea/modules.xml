@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/CompressImageByHuffman.iml" filepath="$PROJECT_DIR$/.idea/modules/CompressImageByHuffman.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/CompressImageByHuffman.iml" filepath="$PROJECT_DIR$/.idea/CompressImageByHuffman.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/CompressImageByHuffman.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/CompressImageByHuffman.app.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/compress/CompressImageByHuffman.compress.iml" filepath="$PROJECT_DIR$/.idea/modules/compress/CompressImageByHuffman.compress.iml" />
     </modules>

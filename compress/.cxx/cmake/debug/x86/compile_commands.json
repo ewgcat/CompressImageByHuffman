@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/Users/lishuaihua/Desktop/CompressImageByHuffman/compress/.cxx/cmake/debug/x86",
+  "command": "/Users/lishuaihua/Library/Android/sdk/ndk/21.1.6352462/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang --target=i686-none-linux-android21 --gcc-toolchain=/Users/lishuaihua/Library/Android/sdk/ndk/21.1.6352462/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/lishuaihua/Library/Android/sdk/ndk/21.1.6352462/toolchains/llvm/prebuilt/darwin-x86_64/sysroot -Dcompress_EXPORTS -I../../../../libjpeg/include  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC   -o CMakeFiles/compress.dir/src/main/cpp/compress.c.o   -c /Users/lishuaihua/Desktop/CompressImageByHuffman/compress/src/main/cpp/compress.c",
+  "file": "/Users/lishuaihua/Desktop/CompressImageByHuffman/compress/src/main/cpp/compress.c"
+}
+]

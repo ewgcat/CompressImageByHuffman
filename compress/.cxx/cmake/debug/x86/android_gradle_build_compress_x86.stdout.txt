@@ -1,0 +1,1 @@
+ninja: Entering directory `/Users/lishuaihua/Desktop/CompressImageByHuffman/compress/.cxx/cmake/debug/x86'

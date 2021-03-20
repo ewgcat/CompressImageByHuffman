@@ -1,0 +1,1 @@
+ninja: error: '../../../../libjpeg/prebuilt/x86/libjpeg.so', needed by '../../../../build/intermediates/cmake/debug/obj/x86/libcompress.so', missing and no known rule to make it

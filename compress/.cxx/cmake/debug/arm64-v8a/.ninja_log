@@ -1,0 +1,3 @@
+# ninja log v5
+1	257	1616255049	CMakeFiles/compress.dir/src/main/cpp/compress.c.o	5e63af75dad5e72c
+258	349	1616255049	../../../../build/intermediates/cmake/debug/obj/arm64-v8a/libcompress.so	5124e758c13d5745

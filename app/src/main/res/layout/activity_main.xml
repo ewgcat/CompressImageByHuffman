@@ -1,41 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
+    android:padding="20dp"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <Button
-        android:id="@+id/btn_compress"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="压缩" />
-
-    <Button
-        android:id="@+id/btn_select_ptoto"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="选取照片" />
-
-    <ScrollView
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-
         <LinearLayout
+            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <ImageView
-                android:id="@+id/iv1"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:gravity="center_horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
 
+
+                <Button
+                    android:id="@+id/btn_select_photo"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="选取照片" />
+                <Button
+                    android:id="@+id/btn_compress"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="压缩" />
+            </LinearLayout>
+            <TextView
+                android:id="@+id/tv_origin_img"
+                android:text="压缩前的图: "
+                android:gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"/>
             <ImageView
-                android:id="@+id/iv2"
+                android:id="@+id/iv_origin_img"
+                android:maxHeight="200dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:scaleType="fitCenter"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/tv_compressed_img"
+                android:text="压缩后的图: "
+                android:gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"/>
+            <ImageView
+                android:id="@+id/iv_compressed_img"
+                android:maxHeight="200dp"
+                android:layout_width="match_parent"
+                android:scaleType="fitCenter"
+                android:layout_height="wrap_content"/>
+
         </LinearLayout>
-    </ScrollView>
+    </androidx.core.widget.NestedScrollView>
+
+
+
 </LinearLayout>

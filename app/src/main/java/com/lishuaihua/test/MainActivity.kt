@@ -7,38 +7,46 @@ import android.text.format.Formatter
 import android.util.Log
 import android.view.View
 import android.widget.ImageView
+import android.widget.TextView
+import android.widget.Toast
 import com.bumptech.glide.Glide
+import com.hjq.permissions.OnPermission
+import com.hjq.permissions.Permission
+import com.hjq.permissions.XXPermissions
 import com.lishuaihua.compress.BaseViewModel
 import com.lishuaihua.compress.CompressListener
 import com.lishuaihua.imageselector.utils.ImageSelector
-import com.lishuaihua.permissions.JackPermissions
-import com.lishuaihua.permissions.OnPermission
 import java.io.File
 import java.io.FileInputStream
 import java.io.IOException
 import java.util.*
 
 class MainActivity : BaseActivity<BaseViewModel>() {
-    var permissions = arrayOf(Manifest.permission.CAMERA, Manifest.permission.MANAGE_EXTERNAL_STORAGE)
+    var permissions =
+        arrayOf(Manifest.permission.CAMERA, Manifest.permission.MANAGE_EXTERNAL_STORAGE)
 
     //测试图片的存位置
     private lateinit var desPath: String
     private lateinit var iv2: ImageView
     private lateinit var iv1: ImageView
+    private lateinit var tvCompressedImg: TextView
+    private lateinit var tvOriginImg: TextView
     private var path: String? = null
-    private val TAG="MainActivity"
     override fun initView(savedInstanceState: Bundle?) {
         super.initView(savedInstanceState)
-        iv1 = findViewById(R.id.iv1)
-        iv2 = findViewById(R.id.iv2)
-        desPath = cacheDir.toString() + System.currentTimeMillis() + ".jpg"
+        iv1 = findViewById(R.id.iv_origin_img)
+        tvOriginImg = findViewById(R.id.tv_origin_img)
+        iv2 = findViewById(R.id.iv_compressed_img)
+        tvCompressedImg = findViewById(R.id.tv_compressed_img)
+
         checkPermission()
 
         findViewById<View>(R.id.btn_compress)
-            .setOnClickListener { compressImage()
+            .setOnClickListener {
+                compressImage()
             }
 
-        findViewById<View>(R.id.btn_select_ptoto)
+        findViewById<View>(R.id.btn_select_photo)
             .setOnClickListener {
                 ImageSelector.builder()
                     .useCamera(false) // 设置是否使用拍照 需求文档v2 p38 点击上传图标则打开本机相册
@@ -46,13 +54,40 @@ class MainActivity : BaseActivity<BaseViewModel>() {
                     .setMaxSelectCount(1) // 图片的最大选择数量，小于等于0时，不限数量。
                     .start(this@MainActivity, Constants.PICK_IMAGE) // 打开相册
             }
+        iv1.setOnClickListener {
+            if (!StringUtil.isEmpty(path)){
+                val imgUrls = ArrayList<String>()
+                imgUrls.add(path!!)
+                val intent = Intent()
+                val bundle = Bundle()
+                bundle.putStringArrayList("URLS", imgUrls)
+                bundle.putInt("POS", 0)
+                intent.putExtras(bundle)
+                intent.setClass(this@MainActivity, ImagePreviewActivity::class.java)
+              startActivity(intent)
+            }
+        }
+        iv2.setOnClickListener {
+            if (!StringUtil.isEmpty(desPath)){
+                val imgUrls = ArrayList<String>()
+                imgUrls.add(desPath!!)
+                val intent = Intent()
+                val bundle = Bundle()
+                bundle.putStringArrayList("URLS", imgUrls)
+                bundle.putInt("POS", 0)
+                intent.putExtras(bundle)
+                intent.setClass(this@MainActivity, ImagePreviewActivity::class.java)
+                startActivity(intent)
+            }
+        }
     }
 
     private fun compressImage() {
+        desPath = cacheDir.toString() + System.currentTimeMillis() + ".jpg"
         vm.compressImage(
             path = path,
             quality = intArrayOf(100),
-            totalSize = 100,
+            totalSize = 1024,
             desPath = desPath,
             listener = object : CompressListener {
                 override fun startCompress() {
@@ -61,10 +96,11 @@ class MainActivity : BaseActivity<BaseViewModel>() {
 
                 override fun completedCompress() {
                     hideLoading()
-                    Log.i(
-                        TAG,
-                        "压缩后图片大小：" + Formatter.formatFileSize(this@MainActivity, getFileSize(File(desPath)))
+                    var msg = "压缩后的图: " + Formatter.formatFileSize(
+                        this@MainActivity,
+                        getFileSize(File(desPath))
                     )
+                    tvCompressedImg.text = msg.orEmpty()
                     Glide.with(this@MainActivity).load(File(desPath)).into(iv2)
                 }
             })
@@ -75,9 +111,30 @@ class MainActivity : BaseActivity<BaseViewModel>() {
      * 6-11权限申请
      */
     private fun checkPermission() {
-        JackPermissions.with(this).permission(permissions).request(object : OnPermission {
-            override fun onGranted(permissions: List<String>, all: Boolean) {}
-            override fun onDenied(permissions: List<String>, never: Boolean) {}
+        XXPermissions.with(this).permission(permissions).request(object : OnPermission {
+            override fun hasPermission(granted: MutableList<String>?, all: Boolean) {
+                if (all) {
+                    Toast.makeText(this@MainActivity, "获取相机和读写权限成功", Toast.LENGTH_LONG).show()
+                } else {
+                    Toast.makeText(this@MainActivity, "获取部分权限成功，但部分权限未正常授予", Toast.LENGTH_LONG)
+                        .show()
+                }
+            }
+
+            override fun noPermission(denied: MutableList<String>?, never: Boolean) {
+                if (never) {
+                    // 如果是被永久拒绝就跳转到应用权限系统设置页面
+                    Toast.makeText(this@MainActivity, "被永久拒绝授权，请手动授予录音和日历权限", Toast.LENGTH_LONG)
+                        .show()
+                    XXPermissions.startPermissionActivity(
+                        this@MainActivity,
+                        permissions.toMutableList()
+                    )
+                } else {
+                    Toast.makeText(this@MainActivity, "获取相机和读写权限失败", Toast.LENGTH_LONG).show()
+                }
+            }
+
         })
     }
 
@@ -88,13 +145,12 @@ class MainActivity : BaseActivity<BaseViewModel>() {
                 val photos = data.getStringArrayListExtra(ImageSelector.SELECT_RESULT)
                 path = photos!![0]
                 val file = File(path)
-                Log.i(
-                    TAG,
-                    "原图片大小：" + Formatter.formatFileSize(this@MainActivity, getFileSize(file))
-                )
+                var msg = "压缩前的图：" + Formatter.formatFileSize(this@MainActivity, getFileSize(file))
+                tvOriginImg.text = msg.orEmpty()
                 Glide.with(this@MainActivity).load(file).into(iv1!!)
             }
         }
+
     }
 
     companion object {
@@ -124,5 +180,5 @@ class MainActivity : BaseActivity<BaseViewModel>() {
         }
     }
 
-    override fun getLayoutId(): Int =R.layout.activity_main
+    override fun getLayoutId(): Int = R.layout.activity_main
 }

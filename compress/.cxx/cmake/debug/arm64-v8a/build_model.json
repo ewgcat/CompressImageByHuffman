@@ -5,9 +5,9 @@
     "environmentVariables": []
   },
   "cmake": {
-    "cmakeArtifactsBaseFolder": "/Users/lishuaihua/Desktop/CompressImageByHuffman/compress/.cxx/cmake/debug/arm64-v8a",
-    "cmakeServerLogFile": "/Users/lishuaihua/Desktop/CompressImageByHuffman/compress/.cxx/cmake/debug/arm64-v8a/cmake_server_log.txt",
-    "cmakeWrappingBaseFolder": "/Users/lishuaihua/Desktop/CompressImageByHuffman/compress/.cxx/cxx/debug/arm64-v8a",
+    "cmakeArtifactsBaseFolder": "/Users/lishuaihua/Desktop/code/CompressImageByHuffman/compress/.cxx/cmake/debug/arm64-v8a",
+    "cmakeServerLogFile": "/Users/lishuaihua/Desktop/code/CompressImageByHuffman/compress/.cxx/cmake/debug/arm64-v8a/cmake_server_log.txt",
+    "cmakeWrappingBaseFolder": "/Users/lishuaihua/Desktop/code/CompressImageByHuffman/compress/.cxx/cxx/debug/arm64-v8a",
     "effectiveConfiguration": {
       "name": "traditional-android-studio-cmake-environment",
       "description": "Composite reified CMakeSettings configuration",
@@ -15,21 +15,17 @@
       "inheritEnvironments": [
         "ndk"
       ],
-      "buildRoot": "/Users/lishuaihua/Desktop/CompressImageByHuffman/compress/.cxx/cmake/debug/arm64-v8a",
-      "cmakeToolchain": "/Users/lishuaihua/Library/Android/sdk/ndk/21.1.6352462/build/cmake/android.toolchain.cmake",
+      "buildRoot": "/Users/lishuaihua/Desktop/code/CompressImageByHuffman/compress/.cxx/cmake/debug/arm64-v8a",
+      "cmakeToolchain": "/Users/lishuaihua/Library/Android/sdk/ndk/20.0.5594570/build/cmake/android.toolchain.cmake",
       "cmakeExecutable": "/Users/lishuaihua/Library/Android/sdk/cmake/3.10.2.4988404/bin/cmake",
       "variables": [
-        {
-          "name": "CMAKE_FIND_ROOT_PATH",
-          "value": "/Users/lishuaihua/Desktop/CompressImageByHuffman/compress/.cxx/cmake/debug/prefab/arm64-v8a/prefab"
-        },
         {
           "name": "CMAKE_BUILD_TYPE",
           "value": "Debug"
         },
         {
           "name": "CMAKE_TOOLCHAIN_FILE",
-          "value": "/Users/lishuaihua/Library/Android/sdk/ndk/21.1.6352462/build/cmake/android.toolchain.cmake"
+          "value": "/Users/lishuaihua/Library/Android/sdk/ndk/20.0.5594570/build/cmake/android.toolchain.cmake"
         },
         {
           "name": "ANDROID_ABI",
@@ -37,7 +33,7 @@
         },
         {
           "name": "ANDROID_NDK",
-          "value": "/Users/lishuaihua/Library/Android/sdk/ndk/21.1.6352462"
+          "value": "/Users/lishuaihua/Library/Android/sdk/ndk/20.0.5594570"
         },
         {
           "name": "ANDROID_PLATFORM",
@@ -49,7 +45,7 @@
         },
         {
           "name": "CMAKE_ANDROID_NDK",
-          "value": "/Users/lishuaihua/Library/Android/sdk/ndk/21.1.6352462"
+          "value": "/Users/lishuaihua/Library/Android/sdk/ndk/20.0.5594570"
         },
         {
           "name": "CMAKE_EXPORT_COMPILE_COMMANDS",
@@ -57,7 +53,7 @@
         },
         {
           "name": "CMAKE_LIBRARY_OUTPUT_DIRECTORY",
-          "value": "/Users/lishuaihua/Desktop/CompressImageByHuffman/compress/build/intermediates/cmake/debug/obj/arm64-v8a"
+          "value": "/Users/lishuaihua/Desktop/code/CompressImageByHuffman/compress/build/intermediates/cmake/debug/obj/arm64-v8a"
         },
         {
           "name": "CMAKE_MAKE_PROGRAM",
@@ -74,18 +70,17 @@
       ]
     }
   },
-  "cxxBuildFolder": "/Users/lishuaihua/Desktop/CompressImageByHuffman/compress/.cxx/cmake/debug/arm64-v8a",
+  "cxxBuildFolder": "/Users/lishuaihua/Desktop/code/CompressImageByHuffman/compress/.cxx/cmake/debug/arm64-v8a",
   "info": {
     "abi": "ARM64_V8A",
     "bitness": 64,
     "deprecated": false,
     "default": true
   },
-  "originalCxxBuildFolder": "/Users/lishuaihua/Desktop/CompressImageByHuffman/compress/.cxx/cmake/debug/arm64-v8a",
+  "originalCxxBuildFolder": "/Users/lishuaihua/Desktop/code/CompressImageByHuffman/compress/.cxx/cmake/debug/arm64-v8a",
   "variant": {
     "buildSystemArgumentList": [],
     "buildTargetSet": [],
-    "implicitBuildTargetSet": [],
     "cFlagsList": [],
     "cmakeSettingsConfiguration": "android-gradle-plugin-predetermined-name",
     "cppFlagsList": [],
@@ -97,20 +92,20 @@
         "minimumCmakeVersion": "3.10.2",
         "ninjaExe": "/Users/lishuaihua/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja"
       },
-      "cmakeToolchainFile": "/Users/lishuaihua/Library/Android/sdk/ndk/21.1.6352462/build/cmake/android.toolchain.cmake",
-      "cxxFolder": "/Users/lishuaihua/Desktop/CompressImageByHuffman/compress/.cxx",
+      "cmakeToolchainFile": "/Users/lishuaihua/Library/Android/sdk/ndk/20.0.5594570/build/cmake/android.toolchain.cmake",
+      "cxxFolder": "/Users/lishuaihua/Desktop/code/CompressImageByHuffman/compress/.cxx",
       "gradleModulePathName": ":compress",
-      "intermediatesFolder": "/Users/lishuaihua/Desktop/CompressImageByHuffman/compress/build/intermediates",
-      "makeFile": "/Users/lishuaihua/Desktop/CompressImageByHuffman/compress/CMakeLists.txt",
-      "moduleBuildFile": "/Users/lishuaihua/Desktop/CompressImageByHuffman/compress/build.gradle",
-      "moduleRootFolder": "/Users/lishuaihua/Desktop/CompressImageByHuffman/compress",
+      "intermediatesFolder": "/Users/lishuaihua/Desktop/code/CompressImageByHuffman/compress/build/intermediates",
+      "makeFile": "/Users/lishuaihua/Desktop/code/CompressImageByHuffman/compress/CMakeLists.txt",
+      "moduleBuildFile": "/Users/lishuaihua/Desktop/code/CompressImageByHuffman/compress/build.gradle",
+      "moduleRootFolder": "/Users/lishuaihua/Desktop/code/CompressImageByHuffman/compress",
       "ndkDefaultAbiList": [
         "ARMEABI_V7A",
         "ARM64_V8A",
         "X86",
         "X86_64"
       ],
-      "ndkFolder": "/Users/lishuaihua/Library/Android/sdk/ndk/21.1.6352462",
+      "ndkFolder": "/Users/lishuaihua/Library/Android/sdk/ndk/20.0.5594570",
       "ndkMetaAbiList": [
         {
           "abi": "ARMEABI_V7A",
@@ -164,39 +159,35 @@
         "X86",
         "X86_64"
       ],
-      "ndkDefaultStl": "LIBCXX_STATIC",
-      "ndkVersion": "21.1.6352462",
+      "ndkVersion": "20.0.5594570",
       "project": {
-        "compilerSettingsCacheFolder": "/Users/lishuaihua/Desktop/CompressImageByHuffman/.cxx",
-        "cxxFolder": "/Users/lishuaihua/Desktop/CompressImageByHuffman/.cxx",
+        "compilerSettingsCacheFolder": "/Users/lishuaihua/Desktop/code/CompressImageByHuffman/.cxx",
+        "cxxFolder": "/Users/lishuaihua/Desktop/code/CompressImageByHuffman/.cxx",
         "ideBuildTargetAbi": "arm64-v8a,armeabi-v7a,armeabi",
         "isBuildOnlyTargetAbiEnabled": true,
         "isCmakeBuildCohabitationEnabled": false,
         "isNativeCompilerSettingsCacheEnabled": false,
-        "rootBuildGradleFolder": "/Users/lishuaihua/Desktop/CompressImageByHuffman",
-        "sdkFolder": "/Users/lishuaihua/Library/Android/sdk",
-        "isPrefabEnabled": false
+        "rootBuildGradleFolder": "/Users/lishuaihua/Desktop/code/CompressImageByHuffman",
+        "sdkFolder": "/Users/lishuaihua/Library/Android/sdk"
       },
       "splitsAbiFilterSet": [],
       "stlSharedObjectMap": {
         "LIBCXX_SHARED": {
-          "ARMEABI_V7A": "/Users/lishuaihua/Library/Android/sdk/ndk/21.1.6352462/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/arm-linux-androideabi/libc++_shared.so",
-          "ARM64_V8A": "/Users/lishuaihua/Library/Android/sdk/ndk/21.1.6352462/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/aarch64-linux-android/libc++_shared.so",
-          "X86": "/Users/lishuaihua/Library/Android/sdk/ndk/21.1.6352462/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/i686-linux-android/libc++_shared.so",
-          "X86_64": "/Users/lishuaihua/Library/Android/sdk/ndk/21.1.6352462/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/x86_64-linux-android/libc++_shared.so"
+          "ARMEABI_V7A": "/Users/lishuaihua/Library/Android/sdk/ndk/20.0.5594570/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/arm-linux-androideabi/libc++_shared.so",
+          "ARM64_V8A": "/Users/lishuaihua/Library/Android/sdk/ndk/20.0.5594570/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/aarch64-linux-android/libc++_shared.so",
+          "X86": "/Users/lishuaihua/Library/Android/sdk/ndk/20.0.5594570/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/i686-linux-android/libc++_shared.so",
+          "X86_64": "/Users/lishuaihua/Library/Android/sdk/ndk/20.0.5594570/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/x86_64-linux-android/libc++_shared.so"
         },
         "LIBCXX_STATIC": {},
         "NONE": {},
         "SYSTEM": {}
       }
     },
-    "objFolder": "/Users/lishuaihua/Desktop/CompressImageByHuffman/compress/build/intermediates/cmake/debug/obj",
+    "objFolder": "/Users/lishuaihua/Desktop/code/CompressImageByHuffman/compress/build/intermediates/cmake/debug/obj",
     "variantName": "debug",
     "validAbiList": [
-      "ARM64_V8A"
-    ],
-    "prefabDirectory": "/Users/lishuaihua/Desktop/CompressImageByHuffman/compress/.cxx/cmake/debug/prefab",
-    "prefabPackageDirectoryList": []
-  },
-  "prefabFolder": "/Users/lishuaihua/Desktop/CompressImageByHuffman/compress/.cxx/cmake/debug/prefab/arm64-v8a"
+      "ARM64_V8A",
+      "ARMEABI_V7A"
+    ]
+  }
 }

@@ -1,9 +1,9 @@
 cmake_minimum_required(VERSION 3.4.1)
 
 
-set(libjpeg_dir ${CMAKE_SOURCE_DIR}/libjpeg)
+set(libjpeg_dir ${CMAKE_SOURCE_DIR}/libs)
 set(INC_DIR ${libjpeg_dir}/include)
-set(libjpeg_lib_dir ${libjpeg_dir}/prebuilt)
+set(libjpeg_lib_dir ${libjpeg_dir})
 
 #添加头文件目录
 include_directories(${INC_DIR})

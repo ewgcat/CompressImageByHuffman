@@ -1,4 +1,4 @@
-# Install script for directory: /Users/lishuaihua/Desktop/CompressImageByHuffman/compress
+# Install script for directory: /Users/lishuaihua/Desktop/code/CompressImageByHuffman/compress
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/Users/lishuaihua/Desktop/CompressImageByHuffman/compress/.cxx/cmake/debug/armeabi-v7a/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/Users/lishuaihua/Desktop/code/CompressImageByHuffman/compress/.cxx/cmake/debug/armeabi-v7a/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

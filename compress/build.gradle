@@ -33,8 +33,7 @@ android {
     sourceSets {
         main {
             java.srcDirs 'src/java'
-            jniLibs.srcDirs  'libs'
-//            jniLibs.srcDirs '../libjpeg/prebuilt', 'libs'
+            jniLibs.srcDirs '../libjpeg/prebuilt', 'libs'
 
             // 这里没有添加libjpeg.so这个动态库，也是可以执行的。
             // 原因在于android本身使用了 libjpeg.so这个动态库，

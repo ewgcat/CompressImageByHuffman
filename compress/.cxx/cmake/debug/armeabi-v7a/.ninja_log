@@ -1,3 +1,4 @@
 # ninja log v5
 0	97	1640264478	CMakeFiles/compress.dir/src/main/cpp/compress.c.o	20fbe2ddc39b9c8e
 98	175	1640264478	../../../../build/intermediates/cmake/debug/obj/armeabi-v7a/libcompress.so	6925e82416bbdf0b
+0	5	0	clean	7ff32dd4cb7a676
